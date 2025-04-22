@@ -70,8 +70,16 @@ import { SITE_TITLE } from '../consts';
 	}
 	nav a.active {
 		text-decoration: none;
+		text-shadow: 0 0 5px var(--accent);
 		border-bottom-color: var(--accent);
 	}
+	nav a:hover {
+		color: var(--accent-dark);
+		font-weight: bold;
+		letter-spacing: 0.5px;
+		transition: all 0.15s;
+	}
+
 	.social-links,
 	.social-links a {
 		display: flex;
