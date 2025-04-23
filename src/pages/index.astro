@@ -11,13 +11,53 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	<link rel="stylesheet" href="/styles/gallery.css" />
 </head>
+
+<script is:inline>
+	document.addEventListener("DOMContentLoaded", () => {
+		document.querySelectorAll(".image-wrapper").forEach((wrapper) => {
+			wrapper.addEventListener("click", (e) => {
+				// If already touched, allow link click
+				if (wrapper.classList.contains("touched")) return;
+
+				// Prevent accidental tap-through
+				e.preventDefault();
+				e.stopPropagation();
+
+				// Remove .touched from all others
+				document.querySelectorAll(".image-wrapper.touched").forEach((el) => {
+					if (el !== wrapper) el.classList.remove("touched");
+				});
+
+				// Add it to the tapped one
+				wrapper.classList.add("touched");
+			});
+		});
+
+		// Remove touched class when tapping outside
+		document.addEventListener("click", (e) => {
+			if (!e.target.closest(".image-wrapper")) {
+				document.querySelectorAll(".image-wrapper.touched").forEach((el) =>
+					el.classList.remove("touched")
+				);
+			}
+		});
+	});
+</script>
+
+
+
+
+
 <body>
 <!-- <Header /> -->
+
 
 <div class="center-wrapper">
 <main class="gallery-container">
 	<img src="/images/logoBannerWhite.svg" alt="Gargylon Records" class="logo-banner" />
-
+	<div class="mobile-hint" id="mobile-hint">
+		Tap an image to reveal our artist's links.
+	</div>
 	<div class="image-row">
 		<div class="artist-block">
 			<div class="image-card">

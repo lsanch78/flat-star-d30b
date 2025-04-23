@@ -29,7 +29,7 @@
     "build": "astro build",
     "check": "astro build && tsc && wrangler deploy --dry-run",
     "deploy": "astro build && wrangler deploy",
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "preview": "astro build && wrangler dev",
     "types": "wrangler types"
   },

@@ -133,6 +133,20 @@
 
 }
 
+/* Mobile version 'tap' functionality */
+.image-wrapper.touched .card-buttons {
+    opacity: 1;
+}
+
+.image-wrapper.touched .card-btn:hover {
+    background-color: inherit;
+    transform: none;
+    font-size: inherit;
+    z-index: auto;
+    opacity: 1;
+}
+
+
 
 
 /* Optional accent colors */
