@@ -21,7 +21,9 @@
 }
 
 body {
-  font-family: "Atkinson", sans-serif;
+  font-family: "Palatino Linotype", "Palatino", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
   text-align: left;
