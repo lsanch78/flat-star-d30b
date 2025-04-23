@@ -1,0 +1,289 @@
+---
+const artist = {
+    name: "Farewell Blu",
+    photo: "/images/epk/farewellblu-1.jpg",
+    achievements: [
+        "Opened for Sadgirl",
+        "Featured on KROK, CSFU, CSLB Radio",
+        "Over 50k streams on Spotify",
+        "Soundtracked short film *Neon Grief*",
+    ],
+    contact: {
+        email: "mgmt@gargylonrecords.com",
+        instagram: "https://instagram.com/farewellblu",
+        handle: "@farewellblu",
+    },
+    song: {
+        title: "I Should Be Out Dancing",
+        spotifyEmbed: "https://open.spotify.com/embed/track/3sixe55jEQIkvX4bBFfGT7?utm_source=generator"
+    }
+};
+
+---
+
+<style>
+    :root {
+        --accent: #8b0000;
+        --bg: #000;
+        --text: antiquewhite;
+    }
+
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Palatino Linotype", serif;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 2rem 1rem;
+    }
+
+    .hero-text {
+        text-align: center;
+        font-size: 3rem;
+        color: var(--accent);
+        margin-bottom: 3rem;
+    }
+
+    .photo-bio {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    @media (min-width: 768px) {
+        .photo-bio {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+
+    .photo-bio img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+    }
+
+    .bio {
+        flex: 1;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .bio p {
+        margin-top: 0;
+        text-indent: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+
+    h2 {
+        color: var(--accent);
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 0.5rem;
+        font-weight: normal;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    iframe {
+        display: block;
+        margin: 1rem auto;
+        width: 100%;
+        max-width: 600px;
+        border-radius: 12px;
+    }
+
+    .contact {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    a {
+        color: var(--text);
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: var(--accent);
+    }
+
+    .split-section {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    @media (min-width: 768px) {
+        .split-section {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .split-section > div {
+            flex: 1;
+        }
+
+        .split-section .achievements {
+            padding-right: 2rem;
+        }
+
+        .split-section .music {
+            padding-left: 2rem;
+        }
+    }
+
+    .achievements ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        max-width: 100%;
+    }
+
+    .music iframe {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    .tagline {
+        text-align: center;
+        font-style: italic;
+        color: #bbb;
+        margin-top: -3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .image-swap {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 3 / 4;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+    }
+
+    .base {
+        z-index: 0;
+        opacity: 1;
+    }
+
+    .img-2,
+    .img-3,
+    .img-4 {
+        opacity: 0;
+    }
+
+    .image-swap:hover .img-2,
+    .image-swap:hover .img-3,
+    .image-swap:hover .img-4 {
+        opacity: 0; /* default hide unless specific zone is hovered */
+    }
+
+    .hover-zone {
+        position: absolute;
+        width: 100%;
+        height: 25%;
+        left: 0;
+        z-index: 2;
+    }
+
+    .zone-1 {
+        top: 0;
+    }
+    .zone-2 {
+        top: 25%;
+    }
+    .zone-3 {
+        top: 50%;
+    }
+    .zone-4 {
+        top: 75%;
+    }
+
+    .zone-1:hover ~ .img-2 { opacity: 1; }
+    .zone-2:hover ~ .img-3 { opacity: 1; }
+    .zone-3:hover ~ .img-4 { opacity: 1; }
+    .zone-4:hover ~ .base   { opacity: 1; }
+
+
+</style>
+
+<main class="container">
+    <div class="hero-text">{artist.name}</div>
+    <p class="tagline">Orchestral bedroom rock</p>
+
+    <div class="photo-bio">
+        <div class="image-swap">
+            <!-- hover zones go first so they affect what comes after -->
+            <div class="hover-zone zone-1"></div>
+            <div class="hover-zone zone-2"></div>
+            <div class="hover-zone zone-3"></div>
+            <div class="hover-zone zone-4"></div>
+
+            <img src="/images/epk/farewellblu-1.jpg" class="img base" />
+            <img src="/images/epk/farewellblu-2.jpg" class="img img-2" />
+            <img src="/images/epk/farewellblu-3.jpg" class="img img-3" />
+            <img src="/images/epk/farewellblu-4.jpg" class="img img-4" />
+        </div>
+
+
+        <div class="bio">
+            <p>Inspired by songwriting legends like Buddy Holly and the Beatles, Lui&rsquo;s music is a showcase of the power of strong melodies and masterful lyricism. Indelibly raw, he communicates in what feels like unprocessed overflow &mdash; relationships, frustration with the brokenness of American society, dreams for the future, and hope for better days &mdash; the words flow with genuine simplicity, leaving you feeling like you&rsquo;ve just had a conversation with a friend.</p>
+
+            <p>&ldquo;I just sing about life,&rdquo; Lui states, simply. &ldquo;I&rsquo;m not really about being anything I&rsquo;m not &mdash; like I&rsquo;d rather just be real.&rdquo;</p>
+
+            <p>Songs like &ldquo;I Should Be Out Dancing,&rdquo; &ldquo;You Love Me in My Dreams,&rdquo; and &ldquo;runforyourlife&rdquo; display both the unfettered sincerity and effortless melody that is Lui.</p>
+
+            <p>In his most recent releases, Lui has evolved &mdash; bringing much of what he learned as part of The Red Leslies and other indie-rock leaning solo work to a synth-driven indie-pop sound. Effortless as always, his melodies and lyrical genuineness shine bright, marking a new artistic stage where he&rsquo;ll undoubtedly stand out.</p>
+        </div>
+
+    </div>
+
+    <!-- Achievements + Listen Split Row -->
+    <div class="split-section">
+        <div class="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                {artist.achievements.map(item => <li>{item}</li>)}
+            </ul>
+        </div>
+
+        <div class="music">
+            <h2>Top Song</h2>
+            <iframe
+                    src={artist.song.spotifyEmbed}
+                    height="152"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+            ></iframe>
+        </div>
+    </div>
+
+    <h2>Contact</h2>
+    <div class="contact">
+        <p><strong>Email:</strong> <a href={`mailto:${artist.contact.email}`}>{artist.contact.email}</a></p>
+        <p><strong>Instagram:</strong> <a href={artist.contact.instagram}>{artist.contact.handle}</a></p>
+    </div>
+</main>
