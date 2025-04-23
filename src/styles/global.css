@@ -141,3 +141,15 @@ hr {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+
+html, body {
+  height: 100%;
+}
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* ensures full vertical height */
+}
