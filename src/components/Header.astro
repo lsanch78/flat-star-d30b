@@ -5,7 +5,13 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2 class="logo-title">
+			<a href="/">
+				<img src="/public/favicon.svg" alt="Gargylon Logo" class="logo-icon" />
+				{SITE_TITLE}
+			</a>
+		</h2>
+
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
@@ -89,4 +95,21 @@ import { SITE_TITLE } from '../consts';
 			display: none;
 		}
 	}
+
+	.logo-title a {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--black);
+		text-decoration: none;
+	}
+
+	.logo-icon {
+		height: 66px;
+		width: auto;
+		display: inline-block;
+		vertical-align: middle;
+
+	}
+
 </style>
