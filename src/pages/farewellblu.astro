@@ -24,7 +24,7 @@ const artist = {
 <style>
     :root {
         --accent: #8b0000;
-        --bg: #000;
+        --bg: #000000;
         --text: antiquewhite;
     }
 
@@ -42,12 +42,17 @@ const artist = {
         padding: 2rem 1rem;
     }
 
-    .hero-text {
+    .hero-logo {
         text-align: center;
-        font-size: 3rem;
-        color: var(--accent);
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
     }
+
+    .logo-gif {
+        max-width: 500px;
+        width: 80%;
+        height: auto;
+    }
+
 
     .photo-bio {
         display: flex;
@@ -231,8 +236,11 @@ const artist = {
 </style>
 
 <main class="container">
-    <div class="hero-text">{artist.name}</div>
-    <p class="tagline">Orchestral bedroom rock</p>
+    <div class="hero-logo">
+        <img src="/logos/Farewell_Blu_WhiteText.gif" alt="Farewell Blu Logo" class="logo-gif" />
+    </div>
+
+    <p class="tagline"></p>
 
     <div class="photo-bio">
         <div class="image-swap">
