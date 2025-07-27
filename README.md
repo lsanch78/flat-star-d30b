@@ -1,62 +1,39 @@
-# Astro Starter Kit: Blog
+# 🎸 Gargylon Records
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/flat-star-d30b)
+**Gargylon Records** is a modern, fast, and responsive website for an independent music label. Built using [Astro](https://astro.build/), the site highlights artists, events, and releases with a strong emphasis on user experience and performance.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+🌐 **Live Site**: [gargylonrecords.com](https://gargylonrecords.com)
 
-<!-- dash-content-start -->
+---
 
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+## 🚀 Tech Stack
 
-Features:
+- **[Astro](https://astro.build/)** – Static site generator with support for modern frontend frameworks and partial server-side rendering
+- **JavaScript** – Used for interactive UI features like hover-to-reveal link effects
+- **Cloudflare Pages** – CDN-backed hosting for fast, secure global performance
+- **HTML & CSS** – Semantic structure and responsive styling
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+---
 
-<!-- dash-content-end -->
+## ✨ Features
 
-## Getting Started
+- 🔥 **Hover Effects**: Dynamic JavaScript reveals links when users hover over album artwork
+- 📱 **Responsive Design**: Optimized for all screen sizes and devices
+- ⚡ **Fast Loads**: Built with Astro and deployed on Cloudflare's global edge network
+- 🎨 **Brand-Aligned Design**: Custom styling and layout tailored to Gargylon Records’ aesthetic
+- 📄 **SEO Optimized**: Meta tags, alt text, and performance enhancements
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+---
+
+## 📁 Folder Structure
 
 ```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/flat-star-d30b
-```
-
-A live public deployment of this template is available at [https://flat-star-d30b.templates.workers.dev](https://flat-star-d30b.templates.workers.dev)
-
-## 🚀 Project Structure
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-| `npm run deploy`          | Deploy your production site to Cloudflare        |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+.
+├── public/         # Static assets (images, fonts, etc.)
+├── src/
+│   ├── components/ # Reusable UI components
+│   ├── layouts/    # Layout templates
+│   ├── pages/      # Main page routes (home, artists, contact, etc.)
+│   └── scripts/    # Custom JS for interactive elements
+├── astro.config.mjs
+└── package.json
